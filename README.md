@@ -2,7 +2,7 @@
 
 An in-depth analysis and prediction of natural gas prices using the SARIMA (Seasonal AutoRegressive Integrated Moving Average) model.
 
-![Main Graph](link_to_your_main_graph_image)
+![Main Graph](initial_gas_prices_over_time)
 
 ## Introduction
 
