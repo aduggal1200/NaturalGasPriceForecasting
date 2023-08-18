@@ -1,67 +1,70 @@
-# Natural Gas Price Forecasting with SARIMA
+# Natural Gas Price Prediction Using SARIMA
 
-An in-depth analysis and prediction of natural gas prices using the SARIMA (Seasonal AutoRegressive Integrated Moving Average) model.
+In this repository, we delve into the prediction of natural gas prices utilizing the SARIMA (Seasonal AutoRegressive Integrated Moving Average) model. Through a meticulous data analysis process, we aim to understand the historical trends and forecast future prices.
 
-![Main Graph](initial_gas_prices_over_time.png)
+![Initial Natural Gas Prices Over Time](./initial_gas_prices_over_time.png)
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Exploratory Data Analysis](#exploratory-data-analysis)
+3. [Time Series Decomposition](#time-series-decomposition)
+4. [Autocorrelation and Partial Autocorrelation](#autocorrelation-and-partial-autocorrelation)
+5. [Modeling and Prediction](#modeling-and-prediction)
+6. [Forecast](#forecast)
 
 ## Introduction
 
-Natural gas plays a crucial role in the global energy sector. Predicting its price can offer valuable insights for investors, policy-makers, and industries reliant on this energy source. This project showcases an end-to-end analysis of historical natural gas prices and forecasts future prices using the SARIMA model.
-
-## Table of Contents
-1. [Data Source and Preprocessing](#data-source-and-preprocessing)
-2. [Exploratory Data Analysis](#exploratory-data-analysis)
-3. [Time Series Decomposition](#time-series-decomposition)
-4. [Modeling and Prediction](#modeling-and-prediction)
-5. [Conclusion](#conclusion)
-6. [Dependencies](#dependencies)
-7. [Usage](#usage)
-8. [Contributing](#contributing)
-
-## Data Source and Preprocessing
-
-The dataset used in this project comprises of monthly natural gas prices over a specified period. During preprocessing:
-- Dates were converted to a standardized datetime format.
-- Data was examined for missing values.
+Natural gas is a vital energy source, and understanding its price fluctuations is crucial for stakeholders involved in energy markets, policymakers, and even consumers. The above graph represents the trend of natural gas prices over the years.
 
 ## Exploratory Data Analysis
 
-Through visualization, I discerned the patterns and fluctuations in the natural gas prices. This helped inform the next stages of analysis.
+To commence our analysis, we first observed the initial natural gas prices over a span of time. This provided a visual representation of price fluctuations, helping us discern noticeable patterns and irregularities.
 
-![EDA Graph](link_to_your_EDA_graph_image)
+![Initial Natural Gas Prices Over Time](./initial_gas_prices_over_time.png)
 
 ## Time Series Decomposition
 
-I decomposed the time series data to understand its underlying trend, seasonality, and residuals. 
+Decomposing time series data can unveil hidden patterns. By breaking the data into its four primary components—Trend, Seasonal, Residual, and Observed—we gain clearer insights into the underlying structure of the time series.
 
-![Decomposition Graph](link_to_your_decomposition_graph_image)
+![Time Series Decomposition](./time_series_decomposition.png)
+
+The decomposition diagram above helps in understanding the inherent seasonality, the general trend, and other irregular factors that might affect the gas prices.
+
+## Autocorrelation and Partial Autocorrelation
+
+Autocorrelation and partial autocorrelation plots are instrumental in understanding the time series data's internal structure. They help in identifying the order of the ARIMA model that can be fitted to the data.
+
+![ACF and PACF Plot](./acf_pacf_plot.png)
+
+The above graph showcases the ACF and PACF plots, guiding the parameter selection for our SARIMA model.
 
 ## Modeling and Prediction
 
-Using the SARIMA model, we:
+With a chosen model in place, we predicted natural gas prices. The graph below contrasts the actual prices with those predicted by our SARIMA model, offering a visualization of the model's accuracy.
 
-1. Determined the order of differencing and the ARIMA terms using ACF and PACF plots.
-2. Fitted the model and compared the actual values with the predicted ones for validation.
-3. Forecasted natural gas prices for the next year.
+![Actual vs Fitted Natural Gas Prices](./actual_vs_fitted_prices.png)
 
-![Forecast Graph](link_to_your_forecast_graph_image)
+The closeness of the actual and fitted curves suggests the robustness of the prediction model.
 
-## Conclusion
+## SARIMA Model Results
 
-A brief summary of the project findings, potential implications, and any limitations of your approach.
+We fit a SARIMA model with orders `(p=1, d=1, q=1)` and seasonal orders `(P=1, D=1, Q=1, S=12)` to the data. Below are the detailed results from the model fitting:
 
-## Dependencies
+![SARIMA Model Results](./SARIMAX_results.png)
 
-- pandas
-- matplotlib
-- statsmodels
 
-(Add any other libraries or dependencies used in your project)
+These results offer insights into the performance of the SARIMA model, the significance of various parameters, and the model's overall fit to the data.
 
-## Usage
 
-Instructions on how someone can clone, set up, and run your project, if applicable.
+## Forecast
 
-## Contributing
+Armed with a calibrated model, we proceeded to forecast natural gas prices for the foreseeable future.
 
-If you wish to contribute to this project, please fork the repository and submit a pull request.
+![Natural Gas Prices Forecast](./gas_prices_forecast.png)
+
+The above graph provides a glimpse of potential future prices, with the shaded region indicating the prediction's confidence interval.
+
+---
+
+Thank you for visiting this repository! 
